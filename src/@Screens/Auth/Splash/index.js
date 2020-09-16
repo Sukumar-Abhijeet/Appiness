@@ -3,8 +3,7 @@
  */
 
 import React,{useEffect} from 'react';
-import { TouchableOpacity,Text } from 'react-native';
-import { moderateScale } from 'react-native-size-matters';
+import { SafeAreaView,Text } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -14,23 +13,24 @@ const SplashScreen = ({...props}) =>{
 
     useEffect(()=>{
         checkUserLoggedIn();
-    },[])
+    },[]);
 
     const checkUserLoggedIn = () =>{
+        console.log('loggedIn',loggedIn);
         if(loggedIn) navigate('coreStack');
         else navigate('Login');
-    }
+    };
 
     return(
-        <TouchableOpacity style={{padding:moderateScale(8)}}>
+        <SafeAreaView style={{flex:1,justifyContent:'center',alignItems:'center'}}>
             <Text>SplashScreen</Text>
-        </TouchableOpacity>
+        </SafeAreaView>
     );
 };
 
 SplashScreen.propTypes = {
+    loggedIn:PropTypes.bool.isRequired,
     navigation:PropTypes.object.isRequired,
-    loggedIn:PropTypes.string.isRequired
 };
 
 const mapStateToProps =(state) =>{

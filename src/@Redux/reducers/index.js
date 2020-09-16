@@ -5,6 +5,7 @@
 import { USER_LOGOUT } from '../constants';
 import AsyncStorage from '@react-native-community/async-storage';
 import userReducer from './userReducer';
+import employeeListReducer from './employeeListReducer';
 import { persistCombineReducers } from 'redux-persist';
 
 const config = {
@@ -16,7 +17,8 @@ const config = {
 };
 
 const appReducer = persistCombineReducers(config, {
-    userObj: userReducer
+    userObj: userReducer,
+    employeeList:employeeListReducer
 });
 
 const  rootReducer = (state, action) => {
