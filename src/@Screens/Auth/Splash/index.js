@@ -16,7 +16,6 @@ const SplashScreen = ({...props}) =>{
     },[]);
 
     const checkUserLoggedIn = () =>{
-        console.log('loggedIn',loggedIn);
         if(loggedIn) navigate('coreStack');
         else navigate('Login');
     };

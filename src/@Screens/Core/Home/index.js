@@ -69,9 +69,6 @@ HomeScreen.propTypes = {
 };
 
 const mapStateToProps =(state) =>{
-
-    console.log('state',state);
-
     return {
         allEmployees: state.employeeList.allEmployees
     };
