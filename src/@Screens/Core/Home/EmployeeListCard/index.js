@@ -10,7 +10,7 @@ import styles from './styles';
 const EmployeeCard = ({employeeData}) =>{
     const {age,email,gender,name,phoneNo} = employeeData;
 
-    const Capitalise = (str) =>{
+    const Capitalise = (str='loading') =>{
         return str.charAt(0).toUpperCase() + str.slice(1);
     };
 

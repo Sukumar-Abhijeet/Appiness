@@ -12,8 +12,10 @@ import {user} from '../../@Constants/JSON/UserData.json';
 console.log('userReducer',user);
 
 const initialState = {
-    allEmployees:[user],
+    allEmployees:user,
 };
+
+console.log('initialState',initialState);
 
 const  employeeListReducer = (state = initialState,action) =>{
     const {newEmployeeList=[],type} = action;

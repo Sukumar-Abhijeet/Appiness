@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
     },
     inputField:{
         borderBottomColor:'#cfcfcf',
-        borderBottomWidth:1
+        borderBottomWidth:1,
+        height:moderateScale(45)
     },
     loginButton:{
         alignSelf:'flex-end',

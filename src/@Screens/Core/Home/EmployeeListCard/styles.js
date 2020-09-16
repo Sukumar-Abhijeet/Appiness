@@ -12,14 +12,14 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowRadius: 2,  
         elevation: 5,
-        backgroundColor:'#f0f0f0',
+        backgroundColor:'#fff',
         marginVertical:moderateScale(10),
         borderRadius:moderateScale(4),
         padding:moderateScale(15),
         paddingVertical:moderateScale(20)
     },
     name:{
-        fontSize:moderateScale(25),
+        fontSize:moderateScale(20),
         fontWeight:'bold'
     },
     email:{

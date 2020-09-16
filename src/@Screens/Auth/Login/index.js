@@ -57,7 +57,7 @@ const LoginScreen = ({...props}) =>{
         return(
             <TextInput
                 onChangeText={password => setPass( password )}
-                onSubmitEditing ={()=> {validateCredentaials();}}
+                onSubmitEditing ={()=> {checkLogin();}}
                 placeholder="Enter password"
                 placeholderTextColor={'#6e6d6d'}
                 ref={myPassword}

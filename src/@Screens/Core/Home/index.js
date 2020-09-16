@@ -4,7 +4,7 @@
  */
 
 import React from 'react';
-import { TouchableOpacity,View,Text,ScrollView } from 'react-native';
+import { TouchableOpacity,View,Text,SafeAreaView,FlatList } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
 import { connect } from 'react-redux';
@@ -34,28 +34,31 @@ const HomeScreen = ({...props}) =>{
 
     const renderEmployeeList = () =>{
         if(allEmployees.length)
+
             return(
-                <ScrollView showsVerticalScrollIndicator={false} style={styles.listWrapper}>
-                    <View style={{paddingHorizontal:moderateScale(5)}}>
-                        {
-                            allEmployees.map((item,index)=>(
-                                <EmployeeCard employeeData={item} key={index} />
-                            ))
-                        }
-                    </View>
-                </ScrollView>
+                <FlatList
+                    data={allEmployees}
+                    keyExtractor={item => item.id.toString()}
+                    maxToRenderPerBatch={4}
+                    renderItem={({ item }) => (
+                        <View style={{paddingHorizontal:moderateScale(5)}}>
+                            <EmployeeCard employeeData={item} />
+                        </View>
+                    )}
+                    scrollEventThrottle={16}
+                    showsVerticalScrollIndicator={false}
+                    style={styles.listWrapper}
+                    windowSize={6}
+                />
             );
-        
         return null;
     };
 
     return(
-        <TouchableOpacity style={styles.mainContainer}>
+        <SafeAreaView style={styles.mainContainer}>
             {renderHeader()}
-            {
-                renderEmployeeList()
-            }
-        </TouchableOpacity>
+            {renderEmployeeList()}
+        </SafeAreaView>
     );
 };
 
@@ -66,6 +69,9 @@ HomeScreen.propTypes = {
 };
 
 const mapStateToProps =(state) =>{
+
+    console.log('state',state);
+
     return {
         allEmployees: state.employeeList.allEmployees
     };

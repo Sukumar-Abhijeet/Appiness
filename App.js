@@ -14,8 +14,6 @@ export const reduxPersistStore = persistStore(reduxStore);
 
 class App extends Component {
 
- 
-
     renderLoader = () =>{
         return <ScreenLoader />;
     }

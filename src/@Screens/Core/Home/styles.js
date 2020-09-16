@@ -17,7 +17,9 @@ const styles = StyleSheet.create({
         justifyContent:'space-between',
         alignItems:'center',
         paddingHorizontal:moderateScale(20),
-        flexDirection:'row'
+        flexDirection:'row',
+        borderBottomColor:'#ebebeb',
+        borderBottomWidth:1.5
     },
     headerText:{
         fontSize:moderateScale(18),
@@ -35,6 +37,7 @@ const styles = StyleSheet.create({
     },
     listWrapper:{
         padding:moderateScale(10),
+        paddingBottom:moderateScale(100)
     }
 });
 
